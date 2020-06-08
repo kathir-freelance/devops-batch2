@@ -1,0 +1,69 @@
+task 1:
+=========
+clone a repo
+
+add a file in it 
+
+commit it
+
+connect it to another existing central repo
+
+try to push the file to that repo
+
+
+task 2:
+
+create a main repo
+
+add some 3 html files and commit it
+[register.html,header.html,footer.html]
+
+push the files to central repo
+
+create a branch -> header :
+
+make changes in header.html
+add it to stage & commit it
+
+merge it with master
+
+create a branch -> footer :
+
+make changes in footer.html
+add it to stage & commit it
+
+merge it with master
+
+in the above process how can u push the changes of header,
+in to all the  other child branches when its merged with master.
+
+ie chnages done in footer generally merges with master and that 
+change  will not be reflected in footer branch
+
+
+task 3:
+
+ if one developer deleted a file while another developer was modifying it
+
+task 4:
+
+git commit -a -m "done" 
+
+task 5: refer to task5.txt in repo
+
+task 6: git rebase
+
+task 7: how to change editor from vi to word document editor
+
+task 8: how to create a alias of git commands (shortcut names)
+
+task 9: what is git tags, how to create tags
+
+task 10: how to create git hub hooks (github sites)
+	 how to configure contributors for the projects
+         how to trigger mail when someone pushes code into ur repo
+
+task 11: time on notepad file for git commit template
+
+task 12 : git ignore using global ignore (excludesfile)
+ 
