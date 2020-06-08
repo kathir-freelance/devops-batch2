@@ -1,0 +1,153 @@
+D:\merging>echo "mrge files" > m1.txt
+
+D:\merging>echo "mrge files 2" > m2.txt
+
+D:\merging>git branch
+fatal: Not a git repository (or any of the parent directories): .git
+
+D:\merging>git init
+Initialized empty Git repository in D:/merging/.git/
+
+D:\merging>git branch
+
+D:\merging>git add .
+
+D:\merging>git commit -m "files added"
+[master (root-commit) 0e22c2a] files added
+ Committer: Natarajan <A785230@SYNTELINC.COM>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 2 insertions(+)
+ create mode 100644 m1.txt
+ create mode 100644 m2.txt
+
+D:\merging>git status
+On branch master
+nothing to commit, working directory clean
+
+D:\merging>git checkout -b hotfix1
+Switched to a new branch 'hotfix1'
+
+D:\merging>git branch
+* hotfix1
+  master
+
+D:\merging>echo "hot fix1" > new_option.txt
+
+D:\merging>git add .
+
+D:\merging>git commit -m "files chngs done"
+[hotfix1 a810cd6] files chngs done
+ Committer: Natarajan <A785230@SYNTELINC.COM>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+ create mode 100644 new_option.txt
+
+D:\merging>git status
+On branch hotfix1
+nothing to commit, working directory clean
+
+D:\merging>git status
+On branch hotfix1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   m1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+D:\merging>git add .
+
+D:\merging>git commit -m "chnges do0ne in br"
+[hotfix1 2e82c05] chnges do0ne in br
+ Committer: Natarajan <A785230@SYNTELINC.COM>
+Your name and email address were configured automatically based             on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+D:\merging>git checkout master
+Switched to branch 'master'
+
+D:\merging>git merge hotfix1
+Updating 0e22c2a..2e82c05
+Fast-forward
+ m1.txt         | 2 +-
+ new_option.txt | 1 +
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+ create mode 100644 new_option.txt
+
+D:\merging>git checkout hotfix1
+Switched to branch 'hotfix1'
+
+D:\merging>git checkout master
+M       m1.txt
+Switched to branch 'master'
+
+D:\merging>git checkout hotfix1
+M       m1.txt
+Switched to branch 'hotfix1'
+
+D:\merging>git add .
+
+D:\merging>git commit -m "in branch added &&&"
+[hotfix1 4814908] in branch added &&&
+ Committer: Natarajan <A785230@SYNTELINC.COM>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+D:\merging>git checkout master
+Switched to branch 'master'
+
+D:\merging>git merge hotfix1
+Updating 2e82c05..4814908
+error: Your local changes to the following files would be overwritten by merge:
+        m1.txt
+Please commit your changes or stash them before you can merge.
+Aborting
+
+D:\merging>git merge hotfix1
+Updating 2e82c05..4814908
+error: Your local changes to the following files would be overwritten by merge:
+        m1.txt
+Please commit your changes or stash them before you can merge.
+Aborting
+
+D:\merging>
