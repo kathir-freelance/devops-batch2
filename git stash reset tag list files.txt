@@ -1,0 +1,208 @@
+>git ls-tree -r master
+>git ls-files
+>git ls-files --others --exclude-standard
+>git ls-files -s (staging)
+
+git config --list
+git config --list --show-origin
+
+
+git stash temporarily stores changes 
+we made to on our working copy so that we re-apply it later.
+
+The git stash command takes our uncommitted changes 
+(both staged and unstaged), saves them away for later use.
+
+By default, running git stash will stash:
+
+changes that have been added to your index (staged changes)
+changes made to files that are currently tracked by Git (unstaged changes)
+
+But it will not stash:
+
+it will not care about file thats not staged
+files whihc matches out ignore criteria
+
+
+create a folder
+create file
+add file to stage
+commit
+
+
+echo 'hi'>a.txt
+
+git add .
+git commit -m "added"
+
+echo 'hi hello'>b.txt
+git add .
+
+echo 'hi hello'>c.txt
+
+modify a.txt file
+
+git status
+
+git stash
+
+
+in above process, a.txt is unstaged
+b.txt is in staged
+c.txt is never tracked or staged
+
+Re-applying your stashed changes:
+===================================
+
+git status
+On branch master
+nothing to commit, working tree clean
+
+git stash pop
+
+will drop the stash after applying
+
+or
+
+git stash apply
+
+it will not remove from stash history , it will keep it after applying
+
+
+NOTE : This is useful if you want to apply the same stashed 
+       changes to multiple branches.
+
+stashing untracked and ignored files:
+
+Adding the -u option (or --include-untracked) tells 
+git stash to also stash your untracked files
+
+git stash -u
+
+git status
+
+
+NOTE : find out the use of -a or --all in stash
+
+git stash list
+
+ git stash show
+ git stash show -p
+
+
+Command	Description
+/	search for a hunk by regex
+?	help
+n	don't stash this hunk
+q	quit (any hunks that have already been selected will be stashed)
+s	split this hunk into smaller hunks
+y	stash this hunk
+
+git stash branch to create a new branch to apply your stashed changes
+
+git stash branch br1 stash@{2}
+
+
+ git stash drop stash@{1}
+ git stash clear
+
+
+git log --oneline --graph stash@{0}
+
+GIT RESET:
+==========
+echo 'content 1' > content.txt
+git add .
+git commit -m "msg"
+
+echo 'new file content' > first.txt
+git add .
+
+echo 'updated' >> content.txt
+git status
+git ls-files -s
+git reset --hard
+git status
+
+This data loss cannot be undone, this is critical.
+
+
+find out what is --mixed ?
+
+Git Hard Reset to HEAD:
+
+The “–hard” option is used in order to reset the files of the index (or the staging area) and of the working directory.
+
+
+git reset --hard HEAD       (going back to HEAD)
+
+git reset --hard HEAD^      (going back to the commit before HEAD)
+
+git reset --hard HEAD~2     (going back two commits before HEAD)
+
+do some commits in ur code
+
+git log --oneline --graph
+
+git reset --hard "HEAD"
+git reset --hard "HEAD^"
+
+Undoing hard reset to HEAD
+
+git reset --hard HEAD@{1}
+
+git rev-list --header --all
+
+similiarly soft reset , which will not alter the working directory and the index.
+
+
+git reset --soft HEAD       (going back to HEAD)
+
+git reset --soft HEAD^      (going back to the commit before HEAD)
+
+git reset --soft HEAD~2     (going back two commits before HEAD)
+
+
+GIT TAGS:
+==========
+
+Tags are ref's that point to specific points in Git history
+
+Creating a tag :
+
+Git supports two different types of tags, annotated and lightweight tags.
+Lightweight tags and Annotated tags differ in the
+amount of accompanying meta data they store
+
+lightweight tags:
+
+git tag <tagname>
+
+heavy weight:
+
+git tag -a v1.4.5 or git tag -a v1.0.0 -m "v is 1.0.0"
+
+to list all tags
+git tag
+
+filter using wild cards
+
+git tag -l *a*
+
+retagging 
+
+git tag -a -f tagname commit-id
+
+git push origin tagname
+
+deleteing tags
+
+-d
+
+
+
+
+
+
+
+
