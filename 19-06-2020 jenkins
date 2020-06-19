@@ -1,0 +1,17 @@
+using h=jenkins and apache 
+create a job which has to poingt to war file loc
+on clicking build now , it should build the proj
+and deploy it to apache tom cat
+tomcat installable version
+deploytocontainer plugin 
+3 proj 
+buildproj
+  abc   goal of maven - compile
+testproj
+ abc - clean test
+deplproj
+ abc   - clean instal
+depl shud be last in the pipeline
+and it shud deploy the war file in apache tomcat
+possible if all 3 builds in pipeline are successfull trigger a mail
+or for every successfull build
