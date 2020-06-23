@@ -1,0 +1,12 @@
+how to assign a port number to a running container
+
+$ docker run kathirkathir2006/ubu:1.1
+Hello World..! from my first docker image4
+[node1] (local) root@192.168.0.8 ~
+$ docker exec -it kathirkathir2006/ubu:1.1 bash
+Error: No such container: kathirkathir2006/ubu:1.1
+
+
+use a bash command in dockerfile
+
+diff b/ entry point and cmd
