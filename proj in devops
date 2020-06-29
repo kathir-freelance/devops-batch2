@@ -1,0 +1,29 @@
+create a spring proj
+
+
+build
+		
+	if build is failed for more than 2 times or 3 times - mail has to be 	triggered to manager // to tht dev
+	
+	whn github gets any commit build shud be triggered
+	once build is done then test hast start
+
+test
+
+ junit - report // or skip
++
+selenium- generate report
+ 
+
+once test is done the trigger deploy
+
+deploy 
+
+deploy the war or jar to apache tomcat 
+
+
+every stage has to trigger a mail, along with reports
+
+create report using jacoco and corbetura for code analysis
+
+blue ocean, decl pipeline - 
